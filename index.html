@@ -14,17 +14,28 @@
 	  analytics.load("3wFwdQEHtxUrCQYrAjpqyM2mYs0PIvfa");
 	  analytics.page();
 	  }}();
+	  
+	  fnSubmitForm(){
+		analytics.identify({
+		  nickname: 'Wei Keng',
+		  token   :  Math.round(Math.random()*100,2),
+		  favoriteCompiler: 'A-0',
+		  industry: 'Computer Science'
+		});
+		
+		document.getElementById('formSegment').submit();
+	  }
 	</script>
    </head>
 
    <body>
 		<div class="content">
 		   <h3>This is a simple test for segement js library source</h3>
-		   <form target="_blank" method="get" action="segment-js-target.html">
+		   <form id='formSegment' target="_blank" method="get" action="segment-js-target.html">
 			  <div style="padding:5px">Name: <input type="text" name="name"/></div>
 			  <div style="padding:5px">Email: <input type="text" name="email"/></div>
 			  <div style="padding:5px">Mobile: <input type="text" name="mobile"/></div>
-			  <input type="Submit"/>
+			  <input type="button" onclick="fnSubmitForm()"/>
 		   </form>
 	   </div>
    </body>
