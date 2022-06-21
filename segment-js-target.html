@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <title>Segment Javascript Source Test : wk </title>
+	 <style>
+		.content {
+		  max-width: 600px;
+		  margin: auto;
+		  padding-top:100px;
+		}
+		
+		.readOnlyInput {
+		   border:0px;
+		   readonly:readonly;
+		}
+	 </style>
+	 
+   </head>
+
+   <body>
+    
+		<div class="content">
+		   <h3>We have received your submission, thank you!</h3>
+		   <form target="_blank">
+			  <div style="padding:5px"><b>Name:</b> <input type="text" id="name" class="readOnlyInput"/></div>
+			  <div style="padding:5px"><b>Email:</b> <input type="text" id="email" class="readOnlyInput"/></div>
+			  <div style="padding:5px"><b>Mobile:</b> <input type="text" id="mobile" class="readOnlyInput"/></div>
+			  <script>
+			   const params = new URLSearchParams(window.location.search);	   			   
+               document.getElementById('name').value = params.get('name');
+			   document.getElementById('email').value = params.get('email');
+			   document.getElementById('mobile').value = params.get('mobile');
+			 </script>
+		   </form>
+	   </div>
+   </body>
+</html>
